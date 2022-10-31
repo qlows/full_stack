@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 
 //User can create new employee
 routes.post("/employees", async (req, res) => {
-    if (req.body.content) {
+    if (req.body) {
         return res.status(400).send({
             message: "Content Can Not Be Empty"
         });

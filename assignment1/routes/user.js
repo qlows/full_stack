@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt")
 
 // User signup
 routes.post("/signup", async(req, res) => {
-    if(req.body.body) {
+    if(req.body) {
         return res.status(400).json({
             message: "Content Can Not Be Empty"
         });
@@ -27,21 +27,27 @@ routes.post("/signup", async(req, res) => {
 
 // User login
 routes.post("/login", async(req, res) =>{
-    if(req.body.body) {
+    if(req.body) {
         return res.status(400).json({
             message: "Content Can Not Be Empty"
         });
     }
     
-    try{
-        const user = await userModel.findOne(req.body.username);
-        if(!user){
-            res.status(400).json("Could not find the user")
-        }
-        res.status(200).json(user)
+
+    const {username, password} = req.body;
+    const user = await userModel.findOne({
+        username: username,
+        password: password
+    });
+
+    if(user.password === password && user.username === username){
+        res.status(200).json({
+            "username": user.username,
+            "password": user.password
+        })
     }
-    catch(error){
-        res.status(500).json(error)
+    else{
+        res.status(500).json("Invalid Credentials")
     }
 });
 

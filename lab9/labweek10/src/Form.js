@@ -1,4 +1,6 @@
 import React from "react";
+
+
 export default class Form extends React.Component {
     constructor(props) {
         super(props)
@@ -58,12 +60,13 @@ export default class Form extends React.Component {
                     <input onChange={formElement => this.onValueChange(formElement)}
                         type="text" name="postalCode" placeholder="Postal Code"
                     />
+                    <br />
 
                     <div>
-                        <label>Province</label>
+
                         <select name="optionSelected" onChange={formElement => this.onValueChange(formElement)}>
                             <option name="optionSelected" key="">---Choose a Province---</option>{
-                                this.options.map(optionSelected => {
+                                this.province.map(optionSelected => {
                                     return (
                                         <option key={optionSelected}>{optionSelected}</option>
                                     )
@@ -72,8 +75,13 @@ export default class Form extends React.Component {
                         </select>
                     </div>
 
-                    <input type="checkbox" name="checkbox" value="check" id="agree">Agree Terms & Conditions</input>
-                    <input onChange={formElement => this.onValueChange(formElement)} type="submit" name="submit" placeholder="Submit" />
+                    <br />
+                    <input type="checkbox" name="checkbox" value="check" id="agree" /> Agree Terms & Conditions
+
+                    <br />
+                    <input onChange={formElement => this.onValueChange(formElement)} type="submit" name="submit " placeholder="Submit" />
+
+
                 </form>
 
                 <br />
@@ -81,13 +89,17 @@ export default class Form extends React.Component {
                 <br />
 
                 <h2>Data Output</h2>
-                <h6>Full Name: {this.state.firstName}</h6>
-                <h6>Email: {this.state.email}</h6>
-                <h6>Address: {this.state.address + this.state.address2}</h6>
-                <h6>City: {this.state.city}</h6>
-                <h6>Province: {this.state.optionSelected}</h6>
-                <h6>Postal Code: {this.state.postalCode}</h6>
+
+                <div>
+                    <p>Full Name: {this.state.firstName}</p>
+                    <p>Email: {this.state.email}</p>
+                    <p>Address: {this.state.address + this.state.address2}</p>
+                    <p>City: {this.state.city}</p>
+                    <p>Province: {this.state.optionSelected}</p>
+                    <p>Postal Code: {this.state.postalCode}</p>
+                </div>
             </div>
         )
     }
+
 }

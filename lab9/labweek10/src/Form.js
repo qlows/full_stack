@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export default class Form extends React.Component {
     constructor(props) {
         super(props)
@@ -15,6 +14,7 @@ export default class Form extends React.Component {
             postalCode: ""
         }
     }
+
     province = [
         "Alberta", "British Columbia",
         "Manitoba", "New Brunswick",
@@ -63,7 +63,6 @@ export default class Form extends React.Component {
                     <br />
 
                     <div>
-
                         <select name="optionSelected" onChange={formElement => this.onValueChange(formElement)}>
                             <option name="optionSelected" key="">---Choose a Province---</option>{
                                 this.province.map(optionSelected => {
@@ -80,8 +79,6 @@ export default class Form extends React.Component {
 
                     <br />
                     <input onChange={formElement => this.onValueChange(formElement)} type="submit" name="submit " placeholder="Submit" />
-
-
                 </form>
 
                 <br />
@@ -89,7 +86,6 @@ export default class Form extends React.Component {
                 <br />
 
                 <h2>Data Output</h2>
-
                 <div>
                     <p>Full Name: {this.state.firstName}</p>
                     <p>Email: {this.state.email}</p>
@@ -101,5 +97,4 @@ export default class Form extends React.Component {
             </div>
         )
     }
-
 }

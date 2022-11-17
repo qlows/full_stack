@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import "bootstrap/dist/css/bootstrap.min.css";
-import{Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 export default class PersonList extends Component {
 
@@ -32,12 +32,12 @@ export default class PersonList extends Component {
                                 <div>
                                     <h5>
                                         {user.name.title} {user.name.first} {user.name.last} - {user.login.uuid}
-                                        <hr/>
+                                        <hr />
                                     </h5>
                                 </div>
                                 <div>
                                     <img src={user.picture.large} alt="users" />
-                                    <br/>
+                                    <br />
                                     <Button variant='primary'>Details</Button>
                                 </div>
                                 <div>

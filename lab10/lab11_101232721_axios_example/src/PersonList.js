@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
+import "bootstrap/dist/css/bootstrap.min.css";
+import{Button} from "react-bootstrap";
 
 export default class PersonList extends Component {
 
@@ -22,22 +24,23 @@ export default class PersonList extends Component {
 
     render() {
         return (
-            <div>
+            <div >
                 {
                     this.state.persons.map(user => (
                         <>
-                            <div class="container">
-                                <div class="title">
-                                    <h2>
+                            <div>
+                                <div>
+                                    <h5>
                                         {user.name.title} {user.name.first} {user.name.last} - {user.login.uuid}
-                                    </h2>
+                                        <hr/>
+                                    </h5>
                                 </div>
-                                <div class="body">
-                                    <div class="left-side"></div>
+                                <div>
                                     <img src={user.picture.large} alt="users" />
-                                    <button>Details</button>
+                                    <br/>
+                                    <Button variant='primary'>Details</Button>
                                 </div>
-                                <div class="right-side">
+                                <div>
                                     <p>username: {user.login.username}</p>
                                     <p>Gender: {user.gender}</p>
                                     <p>Time Zone: {user.location.timezone.description}</p>

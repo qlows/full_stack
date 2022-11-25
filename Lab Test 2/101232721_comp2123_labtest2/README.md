@@ -1,8 +1,10 @@
 # Getting Started with Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Weather app using API, React, and axios.
 
-## Available Scripts
+Here you can get the weather of the location entered.
+
+
 
 In the project directory, you can run:
 

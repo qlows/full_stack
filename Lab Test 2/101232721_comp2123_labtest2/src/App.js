@@ -29,30 +29,39 @@ function App() {
           placeholder='Enter Location'
           type="text" />
       </div>
+
       <div className='container'>
         <div className='top'>
           <p>{data.name}</p>
         </div>
+
         <div className='temp'>
           {data.main ? <h1>{data.main.temp.toFixed()} °C</h1> : null}
         </div>
+
         <div className='desc'>
           {data.weather ? <p>{data.weather[0].main}</p> : null}
         </div>
-        <div className='bottom'>
-          <div className='feel'>
-            <h6>Feels Like</h6>
-            {data.main ? <p className='bold'>{data.main.feels_like.toFixed()} °C</p> : null}
+
+        {data.name != undefined &&
+          <div className='bottom'>
+            <div className='feel'>
+              <h6>Feels Like</h6>
+              {data.main ? <p className='bold'>{data.main.feels_like.toFixed()} °C</p> : null}
+            </div>
+
+            <div className='humidity'>
+              <h6>Humidity</h6>
+              {data.main ? <p className='bold'>{data.main.humidity}%</p> : null}
+            </div>
+            
+            <div className='wind'>
+              <h6>Wind Speed</h6>
+              {data.wind ? <p className='bold'>{data.wind.speed.toFixed()} KMH</p> : null}
+            </div>
           </div>
-          <div className='humidity'>
-            <h6>Humidity</h6>
-            {data.main ? <p className='bold'>{data.main.humidity}%</p> : null}
-          </div>
-          <div className='wind'>
-            <h6>Wind Speed</h6>
-            {data.wind ? <p className='bold'>{data.wind.speed.toFixed()} KMH</p> : null}
-          </div>
-        </div>
+        }
+
       </div>
     </div>
   );

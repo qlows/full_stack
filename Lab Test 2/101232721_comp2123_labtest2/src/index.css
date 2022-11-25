@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -24,6 +26,10 @@ p {
 
 h2 {
   font-size: 55px;
+}
+
+h6{
+  font-size: 25px;
 }
 
 .App {
@@ -67,6 +73,23 @@ h2 {
   transform: rotate(270deg);
 }
 
+.App .search{
+  text-align: center;
+  padding: 1rem;
+}
+
+.App input{
+  padding: .7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(153, 126, 126, 0.2);
+  background: rgba(87, 70, 70, 0.2);
+}
+
+::placeholder{
+  color: white;
+}
+
 .App .bottom{
   display: flex;
   justify-content: space-evenly;
@@ -76,4 +99,8 @@ h2 {
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(153, 126, 126, 0.2);
+}
+
+.bold {
+  font-weight: 500;
 }

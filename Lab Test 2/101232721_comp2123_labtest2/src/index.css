@@ -68,9 +68,6 @@ h6{
 
 .App .desc{
   position: relative;
-  right: -90%;
-  transform-origin: 0 0;
-  transform: rotate(270deg);
 }
 
 .App .search{
@@ -82,8 +79,8 @@ h6{
   padding: .7rem 1.5rem;
   font-size: 1.2rem;
   border-radius: 25px;
-  border: 1px solid rgba(153, 126, 126, 0.2);
-  background: rgba(87, 70, 70, 0.2);
+  border: 1px solid rgba(26, 90, 101, 0.2);
+  background: rgba(26, 90, 101, 0.2);
 }
 
 ::placeholder{
@@ -98,7 +95,7 @@ h6{
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 12px;
-  background-color: rgba(153, 126, 126, 0.2);
+  background-color: rgba(26, 90, 101, 0.2);
 }
 
 .bold {

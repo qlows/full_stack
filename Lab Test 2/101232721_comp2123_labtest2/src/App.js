@@ -13,7 +13,6 @@ function App() {
     if (event.key === 'Enter') {
       axios.get(url).then((res) => {
         setData(res.data)
-        console.log(res.data)
       })
       setLocation('')
     }
@@ -54,7 +53,7 @@ function App() {
               <h6>Humidity</h6>
               {data.main ? <p className='bold'>{data.main.humidity}%</p> : null}
             </div>
-            
+
             <div className='wind'>
               <h6>Wind Speed</h6>
               {data.wind ? <p className='bold'>{data.wind.speed.toFixed()} KMH</p> : null}

@@ -1,6 +1,6 @@
 # Getting Started with Weather App
 
-Weather app using API, React, and axios.
+Weather app using API, Postman, React, and axios.
 
 Here you can get the weather of the location entered.
 

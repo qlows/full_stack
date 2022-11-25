@@ -4,6 +4,7 @@ Weather app using API, React, and axios.
 
 Here you can get the weather of the location entered.
 
+![localhost](https://github.com/qlows/full_stack/blob/main/Lab%20Test%202/101232721_comp2123_labtest2/Screenshots/localhost.png)
 
 
 In the project directory, you can run:

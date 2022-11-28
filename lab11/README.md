@@ -1,5 +1,5 @@
 
-##Research and Innovation Exercises##
+#Research and Innovation Exercises#
 
 - Do research on React Redux and JWT(JSON Web Token) concepts.
 - Create a small application to demonstrate the concepts.

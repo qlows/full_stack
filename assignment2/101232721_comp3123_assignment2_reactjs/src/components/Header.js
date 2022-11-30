@@ -3,7 +3,19 @@ import { Link, useLocation } from "react-router-dom";
 import "./Header.css"
 
 const Header = () => {
-    const [activeTab, setActiveTab] = ("Home");
+    const [activeTab, setActiveTab] = useState("Home");
+
+    const location = useLocation();
+    useEffect(() => {
+        if (location.pathname === "/") {
+            setActiveTab("Home")
+        } else if (location.pathname === "/add") {
+            setActiveTab("Add")
+        } else if(location.pathname === "/about"){
+            setActiveTab("About")
+        }
+    }, [location])
+
     return (
         <div className='header'>
             <p className='logo'>Employee Management System</p>

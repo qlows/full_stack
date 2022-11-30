@@ -53,7 +53,7 @@ routes.get("/employees", async (req, res) => {
 // http://localhost:3000/api/emp/employees/63606a1c5dc8c173faddfd0b
 // User can get employee details by employee id
 routes.get("/employees/:id", async (req, res) => {
-    if (req.body) {
+    if (req.body.body) {
         return res.status(400).json({
             message: "Content Can Not Be Empty"
         });

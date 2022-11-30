@@ -37,7 +37,7 @@ routers.route("/").get((req, res) => {
     res.send("<h1>Welcome to the backend app - assignment 1</h1>");
 });
 
-const SERVER_PORT = 3000
+const SERVER_PORT = 3001
 routers.listen(SERVER_PORT, () =>{
     console.log(`Server running at http://localhost:${SERVER_PORT}/`)
 }) 

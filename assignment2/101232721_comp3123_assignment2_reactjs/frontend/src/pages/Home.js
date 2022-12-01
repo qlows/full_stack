@@ -11,7 +11,7 @@ const Home = () => {
   }, [])
 
   const getUsers = async () => {
-    const res = await axios.get("http://localhost:3000/api/emp/employees");
+    const res = await axios.get("http://localhost:3001/api/emp/employees");
     if (res.status === 200) {
       setData(res.data);
     }
@@ -31,23 +31,23 @@ const Home = () => {
           <th style={{ textAlign: "center" }}>Salary</th>
         </tr>
       </table>
-{/* dk 57 */}
+
       <tbody>
-        {data && data.map((employee, index) => {
+        {data && data.map((item, index) => {
           return (
             <tr key={index}>
               <th scope="row">{index + 1}</th>
-              <td>{employee.id}</td>
-              <td>{employee.first_name}</td>
-              <td>{employee.last_name}</td>
-              <td>{employee.email}</td>
-              <td>{employee.gender}</td>
-              <td>{employee.salary}</td>
+              <td>{item.id}</td>
+              <td>{item.first_name}</td>
+              <td>{item.last_name}</td>
+              <td>{item.email}</td>
+              <td>{item.gender}</td>
+              <td>{item.salary}</td>
               <td>
-                <Link to={`/employees/${employee.id}`}>
+                <Link to={`/employees/${item.id}`}>
                   <button className='btn btn-view'>View</button>
                 </Link>
-                <Link to={`/employees/${employee.id}`}>
+                <Link to={`/employees/${item.id}`}>
                   <button className='btn btn-edit'>Update</button>
                 </Link>
                 <button className='btn btn-delete'>Delete</button>

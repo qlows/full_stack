@@ -13,20 +13,19 @@ function App() {
   return (
     <BrowserRouter>
       <div className='App'>
-        <Header/>
-        <ToastContainer/>
-          <Routes>
-            <Route exact path="/" element={<Home/>} />
-            <Route path='/add' element={<Add/>} />
-            <Route path='/update/:id' element={<Add/>} />
-            <Route path='/view/:id' element={<View/>} />
-            <Route path='/about' element={<About/>} />
-          </Routes>
-        
+        <Header />
+        <ToastContainer />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path='/add' element={<Add />} />
+          <Route path='/update/:id' element={<Add />} />
+          <Route path='/view/:id' element={<View />} />
+          <Route path='/about' element={<About />} />
+        </Routes>
       </div>
     </BrowserRouter>
 
   );
 }
 
-export default App;
+export default App; 

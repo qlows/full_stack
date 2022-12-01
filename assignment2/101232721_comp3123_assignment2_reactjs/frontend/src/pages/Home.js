@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import "./Home.css"
 import axios from "axios"
+//import employees from "../components/employee"
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -11,7 +12,7 @@ const Home = () => {
   }, [])
 
   const getUsers = async () => {
-    const res = await axios.get("http://localhost:3001/api/emp/employees");
+    const res = await axios.get("http://localhost:8080/api/emp/employees");
     if (res.status === 200) {
       setData(res.data);
     }

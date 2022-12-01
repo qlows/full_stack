@@ -2,19 +2,30 @@ import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import "./Home.css"
 import axios from "axios"
+import { toast } from 'react-toastify'
 //import employees from "../components/employee"
 
 const Home = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    getUsers();
+    getEmployee();
   }, [])
 
-  const getUsers = async () => {
+  const getEmployee = async () => {
     const res = await axios.get("http://localhost:8080/api/emp/employees");
     if (res.status === 200) {
       setData(res.data);
+    }
+  }
+
+  const onDeleteEmp = async (id) => {
+    if(window.confirm("Do you want to delete the employee data?")){
+      const res = await axios.delete(`http://localhost:8080/api/emp/employees/${id}`)
+      if(res.status === 200){
+        toast.success(res.data)
+        getEmployee();
+      }
     }
   }
 
@@ -51,7 +62,7 @@ const Home = () => {
                 <Link to={`/employees/${item.id}`}>
                   <button className='btn btn-edit'>Update</button>
                 </Link>
-                <button className='btn btn-delete'>Delete</button>
+                <button className='btn btn-delete' onClick={() => onDeleteEmp(item.id)}>Delete</button>
               </td>
             </tr>
           )

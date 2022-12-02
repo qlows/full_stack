@@ -28,22 +28,22 @@ const View = () => {
                 </div>
                 <div className='container'>
                     <strong>ID: </strong>
-                    <strong>{employee.id}</strong>
+                    <span>{employee.id}</span>
                     <br />
                     <strong>First Name: </strong>
-                    <strong>{employee.first_name}</strong>
+                    <span>{employee.first_name}</span>
                     <br />
                     <strong>Last Name: </strong>
-                    <strong>{employee.last_name}</strong>
+                    <span>{employee.last_name}</span>
                     <br />
                     <strong>Email: </strong>
-                    <strong>{employee.email}</strong>
+                    <span>{employee.email}</span>
                     <br />
                     <strong>Gender: </strong>
-                    <strong>{employee.gender}</strong>
+                    <span>{employee.gender}</span>
                     <br />
                     <strong>Salary: </strong>
-                    <strong>{employee.salary}</strong>
+                    <span>{employee.salary}</span>
                     <br />
                     <Link to="/">
                         <button className='btn btn-edit'>Back</button>
